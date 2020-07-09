@@ -7,6 +7,9 @@
   --mainGrey: #ececec;
   --mainSpacing: 0.1rem;
   --mainTransition: all 0.3s ease;
+  --primary-color: rgba(13,110,139,.45);
+	--overlay-color:rgba(0, 0, 0, 0.9) ;
+	--menu-speed: .75s;
 }
 * {
   margin: 0;
@@ -40,6 +43,133 @@ body {
 .nav-icon {
   font-size: 1.5rem;
 }
+.menu-wrap{
+	position: fixed;
+	top: 0;
+	left: 50px;
+	z-index: 1;
+}
+.toggler{
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	opacity: 0;
+
+}
+.hamburger{
+position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	width: 60px;
+	height: 60px;	
+  /* background: var(--primary-color); */
+  background: rgb(231, 226, 221);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+}
+.hamburger > div{
+position: relative;
+width: 100%;
+height: 2px;
+background: #000;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: all .5s ease;
+}
+.hamburger > div:before,
+.hamburger > div:after{
+	content: '';
+	position: absolute;
+	z-index: 2;
+	top: -10px;
+	width: 100%;
+height: 2px;
+background: #000;
+
+}
+.hamburger > div:after{
+	top: 10px;}
+	.menu-wrap .toggler:checked + .hamburger > div{
+transform: rotate(180deg);
+	}
+
+	/* make it Cross(X) while clicking */
+	.menu-wrap .toggler:checked + .hamburger > div:before,
+		.menu-wrap .toggler:checked + .hamburger > div:after{
+			top: 0;
+			transform: rotate(90deg);
+		}
+			
+.menu-wrap .toggler:checked:hover + .hamburger > div{
+transform: rotate(360deg);
+}
+/* show Menu */
+.menu-wrap .toggler:checked ~ .menu{
+visibility: visible;
+}
+.menu-wrap .toggler:checked ~ .menu > div{
+	transform: scale(1);
+	transition: var(--menu-speed);
+}
+.menu-wrap .toggler:checked ~ .menu > div >div{
+	opacity: 1;
+	transition: all .4s ease;
+}
+.menu-wrap .menu{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	/* overflow: hidden; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+
+}
+.menu-wrap .menu > div{
+background: var(--overlay-color);
+border-radius: 50%;
+width: 200vw;
+height: 200vw;
+display: flex;
+flex: none;
+justify-content: center;
+align-items: center;
+transform: scale(0);
+transition: all .4s ease;
+}
+.menu-wrap .menu > div > div{
+	text-align: center;
+	max-width: 90vw;
+	max-height: 100vh;
+	opacity: 0;
+	transition: opacity .4s ease;
+
+}
+.menu-wrap .menu > div > div > ul >li{
+	list-style: none;
+	color: #fff;
+	font-size: 1.5rem;
+	padding: 1rem;
+}
+.menu-wrap .menu > div > div > ul>li> a{
+	color: inherit;
+	text-decoration: none;
+	transition: all .4s ease;
+}
+
 .cart-btn {
   position: relative;
   cursor: pointer;
