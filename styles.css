@@ -219,9 +219,14 @@ transition: all .4s ease;
   transition: var(--mainTransition);
   cursor: pointer;
 }
+.anchor{
+  text-decoration: none;
+  color: white;
+}
 .banner-btn:hover {
   background: transparent;
   color: var(--primaryColor);
+
 }
 .products {
   /* padding: 4rem 0; */

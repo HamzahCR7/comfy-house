@@ -158,6 +158,46 @@
   
           "image": { "fields": { "file": { "url": "./images/product-16.jpg" } } }
         }
+    },
+    {
+        "sys": { "id": "17" },
+        "fields": {
+          "title": "Austen Compact Desk",
+          "price": 42.99,
+          "discount":47.99,
+  
+          "image": { "fields": { "file": { "url": "./images/product-17.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "18" },
+        "fields": {
+          "title": "Graham Study Table",
+          "price": 42.99,
+          "discount":47.99,
+  
+          "image": { "fields": { "file": { "url": "./images/product-18.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "19" },
+        "fields": {
+          "title": "Agatha Study Table",
+          "price": 42.99,
+          "discount":47.99,
+  
+          "image": { "fields": { "file": { "url": "./images/product-19.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "20" },
+        "fields": {
+          "title": "Wallace Desk",
+          "price": 42.99,
+          "discount":47.99,
+  
+          "image": { "fields": { "file": { "url": "./images/product-20.jpg" } } }
+        }
     }
       
     ]
